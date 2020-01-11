@@ -12,11 +12,7 @@
  var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=" + BeginDate + "&end_date=" + EndDate + "&fq=" + SearchTerm + "&page=" + Pages + "&api-key=" + APIKey;
 
 
-
-
- 
-
- // We then created an AJAX call
+// We then created an AJAX call
  $.ajax({
    url: queryURL,
    method: "GET"
