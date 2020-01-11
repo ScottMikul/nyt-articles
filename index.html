@@ -20,15 +20,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
     <!-- my javascript -->
-    <script defer src="assets/scripts/script.js"></script>
+    <script defer src="assets/javascript/script.js"></script>
 </head>
 <body>
     <div class="container">
         <!-- Title section -->
-        <div class= "row">
-            <div class="col-lg-12"><span><i class="far fa-newspaper"></i></span> New York Times Search</div>
-        </div>
+        <!-- <div class= "row">
+            <div class="col-lg-12"><span><i class="far fa-newspaper"></i></span> <h1>New York Times Search</h1></div>
+        </div> -->
 
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4 text-center">New York Times Search</h1>
+            </div>
+          </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -36,20 +41,52 @@
                     <div class="card-body">
                         <form>
                             <div class="form-group">
-                              <label for="exampleFormControlInput1">Email address</label>
-                              <input type="email" class="form-control" id="" placeholder="name@example.com">
+                              <label for="searchTerm">Search Term</label>
+                              <input type="text" class="form-control" id="searchTerm" placeholder="search term">
                             </div>
                             <div class="form-group">
-                              <label for="exampleFormControlSelect1">Example select</label>
-                              <select class="form-control" id="exampleFormControlSelect1">
+                              <label for="recordNumber">How many Articles?</label>
+                              <select class="form-control" id="recordNumber">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
                                 <option>4</option>
                                 <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
                               </select>
                             </div>
+                            <div class="form-group">
+                                <label for="startYear">Start Year</label>
+                                <input type="text" class="form-control" id="startYear" placeholder="1923">
+                              </div>
+                              <div class="form-group">
+                                <label for="searchTerm">End Year</label>
+                                <input type="text" class="form-control" id="endYear" placeholder="2020">
+                              </div>
+                            <div>
+                                <button type="button" class="btn btn-light">Search</button>
+                                <button type="button" class="btn btn-light">Clear Results</button>
+                            </div>
                         </form>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-lg-12">
+                <div class="card">
+                    <h5 class="card-header">Top Articles</h5>
+                    <div class="card-body">
+                        <!--  -->
+                       <ol id="articles">
+
+                       </ol>
                     </div>
                   </div>
             </div>
