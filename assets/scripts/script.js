@@ -1,8 +1,17 @@
  
- var SearchTerm= "donald%20Trump";
- var Pages= "1";
- var BeginDate= "20180101";
- var EndDate= "20190101";
+ 
+ function ShowHeadline(){
+ 
+ var SearchT= $("#searchTerm").val();
+ var SearchTerm= SearchT.trim();
+ console.log(SearchTerm);
+ var Pages= $("#form-control").val();
+ var BeginD= $("#startYear").val();
+ var BeginDate= BeginD+"0101";
+ console.log(BeginDate);
+ var EndD= $("#endYear").val();
+ var EndDate= EndD+"0101";
+ console.log(EndDate);
  
  
  // This is our API key. Add your own API key between the ""
@@ -22,7 +31,7 @@
 console.log(response.response.docs[0]);
 
 
-
+    $("#articles").empty();
    resultArray = response.response.docs;
    for(var i=0;i<Pages;i++){
        var listEl = $("<li>");
@@ -36,9 +45,11 @@ console.log(response.response.docs[0]);
        $("#articles").append(listEl);
    }
 
-
+   
 
 
 
 
  });
+}
+ $("#searchBtn").on("click", ShowHeadline);
