@@ -23,6 +23,18 @@ console.log(response.response.docs[0]);
 
 
 
+   resultArray = response.response.docs;
+   for(var i=0;i<Pages;i++){
+       var listEl = $("<li>");
+       console.log(resultArray[i].headline.main);
+       var articleName = $("<div>");
+       articleName.text(resultArray[i].headline.main);
+       listEl.append(articleName);
+       var author = $("<div>");
+       author.text(resultArray[i].byline.original);
+       listEl.append(author);
+       $("#articles").append(listEl);
+   }
 
 
 
