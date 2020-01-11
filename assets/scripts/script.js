@@ -1,11 +1,15 @@
  
- 
+ function clearresults(){
+    $("#articles").empty();
+ }
  function ShowHeadline(){
  
  var SearchT= $("#searchTerm").val();
  var SearchTerm= SearchT.trim();
  console.log(SearchTerm);
- var Pages= $("#form-control").val();
+var Pages= "5";
+ //  var Pages= $("#form-control").val();
+ console.log(Pages)
  var BeginD= $("#startYear").val();
  var BeginDate= BeginD+"0101";
  console.log(BeginDate);
@@ -18,7 +22,7 @@
  var APIKey = "Ii3njx05nbjP142su0k8NmFO7dABjhMp";
 
  // Here we are building the URL we need to query the database
- var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=" + BeginDate + "&end_date=" + EndDate + "&fq=" + SearchTerm + "&page=" + Pages + "&api-key=" + APIKey;
+ var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=" + BeginDate + "&end_date=" + EndDate + "&fq=" + SearchTerm + "&page=5" + "&api-key=" + APIKey;
 
 
 // We then created an AJAX call
@@ -31,7 +35,7 @@
 console.log(response.response.docs[0]);
 
 
-    $("#articles").empty();
+$("#articles").empty();
    resultArray = response.response.docs;
    for(var i=0;i<Pages;i++){
        var listEl = $("<li>");
@@ -45,11 +49,7 @@ console.log(response.response.docs[0]);
        $("#articles").append(listEl);
    }
 
-   
-
-
-
-
  });
 }
  $("#searchBtn").on("click", ShowHeadline);
+ $("#clearBtn").on("click", clearresults);
