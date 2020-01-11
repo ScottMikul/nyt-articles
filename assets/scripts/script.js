@@ -21,10 +21,6 @@
    // Create CODE HERE to Log the queryURL
 console.log(response.response.docs[0]);
 
-// var SearchTerm= "donaldTrump";
-// var Pages= "5";
-// var BeginDate= "20180101";
-// var EndDate= "20190101";
 
 
 
